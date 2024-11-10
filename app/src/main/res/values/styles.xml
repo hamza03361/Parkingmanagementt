@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for inactive item text -->
+    <style name="BottomNavigationView.InactiveText" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Style for active item text -->
+    <style name="BottomNavigationView.ActiveText" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#13393C</item>
+    </style>
+</resources>

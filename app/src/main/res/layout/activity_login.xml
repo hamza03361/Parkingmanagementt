@@ -1,0 +1,179 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedscrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#13393C"
+    tools:context=".LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <!-- Top center ImageView -->
+    <ImageView
+        android:id="@+id/topImageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_top_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Welcome back ImageView -->
+    <TextView
+        android:id="@+id/welcomeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="145dp"
+        android:text="Welcome Back"
+        android:textColor="#35B69A"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topImageview" />
+
+    <!-- Small ImageView in front of welcome back -->
+    <ImageView
+        android:id="@+id/smallImageViewone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/small_image_view"
+        app:layout_constraintBottom_toBottomOf="@id/welcomeBack"
+        app:layout_constraintStart_toEndOf="@id/welcomeBack"
+        app:layout_constraintTop_toTopOf="@id/welcomeBack" />
+
+    <!-- Small ImageView below welcome back -->
+    <TextView
+        android:id="@+id/smallImageview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="170dp"
+        android:text="Login to continue using"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeBack" />
+
+    <!-- Email field -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/signup_email_symbol"
+        android:hint="neuralsightsai@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textColor="#FDFCFC"
+        android:drawablePadding="20dp"
+        android:background="@drawable/edittext_background"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/smallImageview2"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Password field with eye icon inside -->
+    <RelativeLayout
+        android:id="@+id/passwordcontainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8">
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/password"
+            android:hint=".........."
+            android:drawablePadding="20dp"
+            android:inputType="textPassword"
+            android:background="@drawable/edittext_background"
+            android:textColor="#FDFCFC"
+            android:textColorHint="#FFFFFF"
+            android:paddingStart="10dp"
+            android:paddingEnd="40dp" /> <!-- Add paddingEnd to make space for the eye icon -->
+
+        <ImageView
+            android:id="@+id/eyeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/eye"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <!-- Forgot Password TextView -->
+    <TextView
+        android:id="@+id/forgotPasswordTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Forgot Password?"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/passwordcontainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/login"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/forgotPasswordTextview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/registerbutton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/register"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/loginbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Don't have an account TextView -->
+    <TextView
+        android:id="@+id/dontHaveAccountTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Don't have an account? Tap on register"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/registerbutton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

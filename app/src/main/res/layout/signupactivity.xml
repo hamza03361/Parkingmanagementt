@@ -1,0 +1,224 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedscrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#13393C"
+    tools:context=".Signupactivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/smallImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="70dp"
+        android:src="@drawable/upscaledarrow"
+        app:layout_constraintBottom_toTopOf="@id/imageview1"
+        app:layout_constraintEnd_toStartOf="@id/logoImageView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- Top center ImageView (Logo) -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toTopOf="@id/imageview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- First ImageView below the logo -->
+    <ImageView
+        android:id="@+id/imageview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/belowsignuplogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+
+    <!-- Second ImageView below the first ImageView -->
+    <TextView
+        android:id="@+id/imageview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Signup as Resident"
+        android:textSize="28dp"
+        android:textColor="#35B69A"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview1" />
+
+    <!-- Third ImageView below the second ImageView -->
+    <TextView
+        android:id="@+id/imageview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Enter your details to proceed further"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview2" />
+
+    <!-- Username field -->
+    <EditText
+        android:id="@+id/usernameedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Username"
+        android:textColor="#FDFCFC"
+        android:textColorHint="#FFFFFF"
+        android:drawablePadding="20dp"
+        android:drawableStart="@drawable/username_symbol"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview3"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Password field with eye icon -->
+    <FrameLayout
+        android:id="@+id/passwordFieldContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usernameedittext"
+        app:layout_constraintWidth_percent="0.8">
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/signup_password_symbol"
+            android:background="@drawable/edittext_background"
+            android:hint="......."
+            android:drawablePadding="20dp"
+            android:inputType="textPassword"
+            android:textColor="#FDFCFC"
+            android:textColorHint="#FFFFFF"
+            android:paddingStart="10dp"/>
+
+        <ImageView
+            android:id="@+id/eyeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/eye" />
+    </FrameLayout>
+
+    <!-- Email field -->
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/signup_email_symbol"
+        android:hint="Email"
+        android:drawablePadding="20dp"
+        android:inputType="textEmailAddress"
+        android:textColor="#FDFCFC"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/edittext_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordFieldContainer"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Phone number field -->
+    <EditText
+        android:id="@+id/phoneedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/signup_phonesymbol"
+        android:hint="Phone Number"
+        android:drawablePadding="20dp"
+        android:inputType="phone"
+        android:textColor="#FDFCFC"
+        android:background="@drawable/edittext_background"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Apartment number field with dropdown -->
+    <FrameLayout
+        android:id="@+id/apartmentFieldContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneedittext"
+        app:layout_constraintWidth_percent="0.8">
+
+        <Spinner
+            android:id="@+id/apartmentspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/signup_apartment_symbol"
+            android:drawablePadding="10dp"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:hint="     Apartment Number"
+            android:inputType="none"
+            android:paddingStart="10dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/dropdownicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/signup_apartment_dropdown" />
+    </FrameLayout>
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/signup_nextbutton"
+        android:text="Next"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/apartmentFieldContainer"
+        app:layout_constraintWidth_percent="0.8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

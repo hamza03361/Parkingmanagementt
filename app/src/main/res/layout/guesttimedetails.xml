@@ -1,0 +1,176 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedscrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#13393C"
+    tools:context=".Guesttimedetails">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/smallImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="70dp"
+        android:src="@drawable/upscaledarrow"
+        app:layout_constraintBottom_toTopOf="@id/imageview1"
+        app:layout_constraintEnd_toStartOf="@id/logoImageView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- Top center ImageView (Logo) -->
+    <TextView
+        android:id="@+id/logoImageView"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Time Details"
+        android:textColor="@color/white"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/imageview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <!-- First ImageView below the logo -->
+    <ImageView
+        android:id="@+id/imageview1"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/personaldetailimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImageView" />
+
+    <!-- Username field -->
+    <EditText
+        android:id="@+id/vehiclecompanyedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/smalldate"
+        android:hint="Date"
+        android:textColor="#FDFCFC"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/edittext_background2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:drawablePadding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageview1"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Password field with eye icon -->
+    <FrameLayout
+        android:id="@+id/passwordFieldContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vehiclecompanyedittext"
+        app:layout_constraintWidth_percent="0.8"/>
+
+    <!-- Email field -->
+    <EditText
+        android:id="@+id/yearEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/smalltime"
+        android:hint="Start Time"
+        android:drawablePadding="20dp"
+        android:inputType="textEmailAddress"
+        android:textColor="#FDFCFC"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/edittext_background2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordFieldContainer"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Phone number field -->
+    <EditText
+        android:id="@+id/licenseedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/smalltime"
+        android:hint="End Time"
+        android:inputType="phone"
+        android:drawablePadding="20dp"
+        android:textColor="#FDFCFC"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/edittext_background2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yearEditText"
+        app:layout_constraintWidth_percent="0.8"
+        android:paddingStart="10dp"/>
+
+    <!-- Checkbox and TextView for "Time Up Notification" -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/checkboxcontainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/licenseedittext"
+        app:layout_constraintWidth_percent="0.8">
+
+        <TextView
+            android:id="@+id/notificationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Time Up Notification"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/timeUpCheckbox"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/timeUpCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#FFFFFF"
+            android:textColorHighlight="#F8F6F6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/signup_nextbutton"
+        android:text="Next"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkboxcontainer"
+        app:layout_constraintWidth_percent="0.8" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
